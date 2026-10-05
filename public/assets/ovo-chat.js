@@ -1,4 +1,4 @@
-(function(){
+(function(){ if(window._ovoChatLoaded) return; window._ovoChatLoaded = true; 
 var FAQ=[
 ['How do I get started with OvoTech?','Request a demo and we will walk you through Medical Coding on the kind of correspondence your team handles. From there we connect OvoTech to your clinical system through NHS IM1 and configure your rules with you in a guided onboarding.'],
 ['What is OvoTech?','OvoTech is the AI operating layer for UK primary care. It takes on the operational and administrative work around care, starting with Medical Coding, across the clinical systems your practice already uses.'],
@@ -81,3 +81,4 @@ panel.addEventListener('click',function(e){var b=e.target.closest('button,[data-
 });
 setLaunch();
 })();
+

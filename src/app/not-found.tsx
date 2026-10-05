@@ -17,10 +17,10 @@ export default function NotFound() {
           <Link href="/" className="btn p" style={{ padding: '15px 26px', background: '#2F6BE0', color: '#FFFFFF', borderRadius: '999px', textDecoration: 'none', fontWeight: 600 }}>
             Go to the home page
           </Link>
-          <Link href="/medical-coding" className="btn o" style={{ padding: '15px 26px', border: '1px solid rgba(255,255,255,0.3)', color: '#FFFFFF', borderRadius: '999px', textDecoration: 'none', fontWeight: 600 }}>
+          <Link href="/medical-coding" className="btn o" style={{ padding: '15px 26px', border: '1px solid rgba(255,255,255,0.8)', color: '#FFFFFF', borderRadius: '999px', textDecoration: 'none', fontWeight: 600 }}>
             See Medical Coding
           </Link>
-          <Link href="/demo" className="btn o" style={{ padding: '15px 26px', border: '1px solid rgba(255,255,255,0.3)', color: '#FFFFFF', borderRadius: '999px', textDecoration: 'none', fontWeight: 600 }}>
+          <Link href="/demo" className="btn o" style={{ padding: '15px 26px', border: '1px solid rgba(255,255,255,0.8)', color: '#FFFFFF', borderRadius: '999px', textDecoration: 'none', fontWeight: 600 }}>
             Book a demo
           </Link>
         </div>
@@ -28,3 +28,5 @@ export default function NotFound() {
     </section>
   )
 }
+
+

@@ -6,8 +6,8 @@ export default function Page() {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!containerRef.current) return
-    const scripts = containerRef.current.querySelectorAll('script')
+        if (!containerRef.current) return
+    const scripts = containerRef.current.querySelectorAll('script:not([data-executed="true"])')
     scripts.forEach((oldScript) => {
       const newScript = document.createElement('script')
       Array.from(oldScript.attributes).forEach((attr) => {
@@ -15,6 +15,7 @@ export default function Page() {
       })
       newScript.text = oldScript.innerHTML
       newScript.async = false
+      newScript.setAttribute('data-executed', 'true')
       oldScript.parentNode?.replaceChild(newScript, oldScript)
     })
   }, [])
@@ -50,7 +51,7 @@ mark{background:#DCEBFF;color:#0F3570;padding:1px 4px;border-radius:4px}
 
 <div style="min-width: 1280px; display: flex; flex-direction: column; background: #FFFFFF; overflow-x: clip">
 
-<div class="annc"><span class="tgl"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Secure by design. Built to NHS standards.</span><span class="mid"><span class="pill">New</span><span>OvoTech Medical Coding for EMIS and SystmOne practices.</span><a href="/medical-coding">See how it works &rarr;</a></span><span class="rt"><a href="#">Support</a><a href="/demo">Contact us</a></span></div>
+<div class="annc"><span class="tgl"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Secure by design. Built to NHS standards.</span><span class="mid"><span class="pill">New</span><span>OvoTech Medical Coding for EMIS and SystmOne practices.</span><a href="/medical-coding">See how it works &rarr;</a></span><span class="rt"><!-- <a href="#">Support</a> --><a href="/demo">Contact us</a></span></div>
 <header id="top" class="hdr">
 <a class="logo" href="/" aria-label="OvoTech home"><img src="/images/logo.svg" alt="OvoTech"></a>
 <nav class="mainnav" aria-label="Main">
@@ -63,7 +64,7 @@ mark{background:#DCEBFF;color:#0F3570;padding:1px 4px;border-radius:4px}
 <div class="dd"><a class="ddb" href="/integrations">Integrations <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="ddm cols"><div class="ddh"><b>Integrations</b><a href="/integrations">Overview &rarr;</a></div><a href="/integrations#connections"><span><b>What we connect to</b><small>EMIS, SystmOne, Docman, IM1, FHIR</small></span></a><a href="/integrations#how-integration"><span><b>How integration works</b><small>Direct, not screen-scraped</small></span></a><a href="/integrations#data"><span><b>Data in, actions out</b><small>What OvoTech reads and writes</small></span></a><a href="/integrations#onboarding"><span><b>Getting connected</b><small>From first call to first letter</small></span></a></div></div>
 <div class="dd"><a class="ddb" href="/trust">Trust <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="ddm cols right"><div class="ddh"><b>Trust</b><a href="/trust">Overview &rarr;</a></div><a href="/trust#standards"><span><b>Standards</b><small>DTAC, DSPT, DCB0129/0160, ISO 27001</small></span></a><a href="/trust#controls"><span><b>Controls</b><small>How we protect patient data</small></span></a><a href="/trust#boundaries"><span><b>Boundaries</b><small>Separation, permissions, history</small></span></a><a href="/trust#checks"><span><b>Four checks</b><small>Human-gated by design</small></span></a><a href="/trust#assurance"><span><b>Assurance pack</b><small>Everything your IG lead needs</small></span></a></div></div>
 <div class="dd"><a class="ddb" href="/resources">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
-<div class="ddm" style="width:320px"><a href="/resources"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 7h6M8 11h6"/></svg></span><span><b>FAQs</b><small>Answers to the questions practices ask most</small></span></a><a href="/resources#downloads"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span><span><b>Downloads</b><small>Brochures and the assurance pack</small></span></a><a href="/about"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><span><b>About OvoTech</b><small>Why we exist and where we're going</small></span></a></div></div>
+<div class="ddm" style="width:320px"><a href="/resources"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 7h6M8 11h6"/></svg></span><span><b>FAQs</b><small>Answers to the questions practices ask most</small></span></a><!-- Downloads hidden --><a href="/about"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><span><b>About OvoTech</b><small>Why we exist and where we're going</small></span></a></div></div>
 </nav>
 <div class="acts"><a class="btn p" href="/demo">Book a demo</a></div>
 </header>
@@ -268,7 +269,7 @@ mark{background:#DCEBFF;color:#0F3570;padding:1px 4px;border-radius:4px}
 <a class="btn p" href="/demo" style="align-self:flex-start">Validate this on your letters <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div></div></div></section>
 <script>(function(){var g=function(i){return document.getElementById(i)};function c(){var a=+g('r1').value,b=+g('r2').value,d=+g('r3').value,r=+g('r4').value;g('o1').value=a;g('o2').value=b;g('o3').value=d;g('o4').value=r;
-var t=a*b*21/60,w=a*d*21/60,h=Math.max(0,t-w),t5=+g('r5').value,t6=+g('r6').value;g('o5').value=t5;g('o6').value=t6;g('ta').textContent=Math.max(0,t5-t6)+'h';g('tp').textContent=(t>0?Math.round(h/t*100):0)+'%';g('ht').textContent=Math.round(t);g('hw').textContent=Math.round(w);g('hb').textContent=Math.round(h);g('vb').textContent='£'+Math.round(h*r).toLocaleString('en-GB');g('fte').textContent=(h/7.5).toFixed(1);}
+var t=a*b*21/60,w=a*d*21/60,h=(t-w),t5=+g('r5').value,t6=+g('r6').value;g('o5').value=t5;g('o6').value=t6;g('ta').textContent=(t5-t6)+'h';g('tp').textContent=(t>0?Math.round(h/t*100):0)+'%';g('ht').textContent=Math.round(t);g('hw').textContent=Math.round(w);g('hb').textContent=Math.round(h);g('vb').textContent='£'+Math.round(h*r).toLocaleString('en-GB');g('fte').textContent=(h/7.5).toFixed(1);}
 ['r1','r2','r3','r4','r5','r6'].forEach(function(i){g(i).addEventListener('input',c)});c();})();</script>
 <section id="changes" style="padding: 128px 80px; display: flex; flex-direction: column; gap: 52px">
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 88px; align-items: end">
@@ -340,7 +341,7 @@ var t=a*b*21/60,w=a*d*21/60,h=Math.max(0,t-w),t5=+g('r5').value,t6=+g('r6').valu
 <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid #EEF2F7"><div><div style="font-size:16px;font-weight:700;color:#081B3C">Manual handling baseline</div><div style="font-size:14px;color:#56606E;margin-top:2px">Used to estimate time saved</div></div><span style="font-size:14px;font-weight:700;color:#1E4FB0;background:#EAF2FF;padding:6px 12px;border-radius:8px">4 minutes</span></div>
 <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid #EEF2F7"><div><div style="font-size:16px;font-weight:700;color:#081B3C">Staff hourly cost</div><div style="font-size:14px;color:#56606E;margin-top:2px">Your practice's own cost baseline</div></div><span style="font-size:14px;font-weight:700;color:#1E4FB0;background:#EAF2FF;padding:6px 12px;border-radius:8px">£16.00</span></div>
 <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 0 4px"><div><div style="font-size: 16px; font-weight: 700; color: #081B3C">Administrative codes</div><div style="font-size: 14px; color: #56606E; margin-top: 2px">Excluded from suggestions</div></div><div style="width: 46px; height: 26px; border-radius: 13px; background: #D5DEE8; position: relative"><div style="position: absolute; left: 3px; top: 3px; width: 20px; height: 20px; border-radius: 50%; background: #FFFFFF"></div></div></div>
-<div style="font-size:13px;color:#56606E;padding-top:14px">Estimates use your configured baseline, not generic savings claims.</div>
+<div style="font-size:13px;color:#56606E;padding-top:14px"><b>These results are estimates</b> based on your configured baseline, not generic savings claims.</div>
 </div>
 </section>
 
@@ -389,12 +390,12 @@ var t=a*b*21/60,w=a*d*21/60,h=Math.max(0,t-w),t5=+g('r5').value,t6=+g('r6').valu
 <p style="margin: 0; font-size: 15px; line-height: 1.7; max-width: 320px">The AI operating layer for primary care. More time for care, less time on admin.</p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px"><div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF">Product</div><a href="/medical-coding" style="color: #B4C1D1">Medical Coding</a><a href="/platform" style="color: #B4C1D1">Platform</a><a href="/integrations" style="color: #B4C1D1">Integrations</a><a href="/trust" style="color: #B4C1D1">Trust &amp; Governance</a></div>
-<div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px"><div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF">Company</div><a href="/about" style="color: #B4C1D1">About</a><a href="/resources" style="color: #B4C1D1">Resources &amp; FAQs</a><a href="/demo" style="color: #B4C1D1">Request a demo</a><a href="#" style="color: #B4C1D1">Support</a></div>
+<div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px"><div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF">Company</div><a href="/about" style="color: #B4C1D1">About</a><a href="/resources" style="color: #B4C1D1">Resources &amp; FAQs</a><a href="/demo" style="color: #B4C1D1">Request a demo</a><!-- Support --></div>
 <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.6"><div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF">Contact</div><span>Tameside Business Park<br>Manchester M34 3QS</span><span>0161 820 1123</span><a href="mailto:ovotech.services@nhs.net" style="color: #9FE0F4">ovotech.services@nhs.net</a></div>
 </div>
 <div style="border-top: 1px solid #173059; padding-top: 28px; display: flex; justify-content: space-between; font-size: 14px">
 <span>© 2026 OvoTech. An iTANZ Group product.</span>
-<div style="display: flex; gap: 28px"><a href="#" style="color: #B4C1D1">Privacy</a><a href="#" style="color: #B4C1D1">Cookies</a><a href="#" style="color: #B4C1D1">Terms</a><a href="#" style="color: #B4C1D1">Accessibility</a></div>
+<div style="display: flex; gap: 28px"><!-- placeholders --></div>
 </div>
 </footer>
 
@@ -437,7 +438,7 @@ function drawCodes(){
  document.getElementById('notAll').hidden=all;document.getElementById('canFile').hidden=!(all&&!filed);document.getElementById('filed').hidden=!filed;
  document.getElementById('filedText').textContent=v.filter(function(x){return x==='a'||x==='e';}).length+' written to the record, '+v.filter(function(x){return x==='r';}).length+' rejected. Audit entry created.';
 }
-document.getElementById('codes').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;st[b.dataset.id]=b.dataset.v;filed=false;drawCodes();});
+document.getElementById('codes').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;if(b.dataset.v==='e'){var cur=C.find(function(x){return x.id===b.dataset.id});var n=prompt('Edit the suggested term:',cur.term);if(n!==null){cur.term=n;st[b.dataset.id]='e'}else{return}}else{st[b.dataset.id]=b.dataset.v}filed=false;drawCodes();});
 document.getElementById('fileBtn').addEventListener('click',function(){filed=true;drawCodes();});
 document.getElementById('resetBtn').addEventListener('click',function(){clear();drawCodes();});
 drawSteps();drawCodes();
@@ -447,8 +448,13 @@ drawSteps();drawCodes();
 <script>(function(){var t=document.getElementById("toTop");function u(){t.classList.toggle("show",window.scrollY>500)}window.addEventListener("scroll",u,{passive:true});u();t.addEventListener("click",function(e){e.preventDefault();window.scrollTo({top:0,behavior:"smooth"})});})();</script>
 <script>(function(){function tabs(bar,pans){var b=[].slice.call(document.querySelectorAll(bar+' .tbtn')),p=[].slice.call(document.querySelectorAll(pans+' > .tpan'));function sel(n){n=(n+p.length)%p.length;b.forEach(function(x,k){x.setAttribute('aria-selected',k==n)});p.forEach(function(x,k){x.classList.toggle('on',k==n)});return n}b.forEach(function(x){x.addEventListener('click',function(){sel(+x.dataset.i)})});return sel}
 var w=tabs('#wtTabs','#wtPans');document.querySelectorAll('#wtPans .tpan').forEach(function(pn,i){pn.querySelector('.wnext').addEventListener('click',function(){w(i+1)});pn.querySelector('.wprev').addEventListener('click',function(){w(i-1)})});
-tabs('#roleTabs','#rolePans');})();</script>
+var setRole = tabs('#roleTabs','#rolePans');var mAud = location.search.match(/aud=(\d)/);if(mAud) setRole(+mAud[1]);})();</script>
 <script src="/assets/v3.js"></script>
 <script src="/assets/ovo-chat.js"></script>
 <script src="/assets/v5.js"></script>
 `
+
+
+
+
+
