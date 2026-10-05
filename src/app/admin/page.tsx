@@ -1,10 +1,19 @@
 import { neon } from '@neondatabase/serverless';
+import { revalidatePath } from 'next/cache';
 
 export const dynamic = 'force-dynamic';
 
 export default async function AdminPage() {
   const sql = neon(process.env.DATABASE_URL || process.env.POSTGRES_URL!);
-  
+
+  async function deleteSubmission(formData: FormData) {
+    'use server';
+    const id = formData.get('id');
+    const sql = neon(process.env.DATABASE_URL || process.env.POSTGRES_URL!);
+    await sql`DELETE FROM contact_submissions WHERE id = ${id}`;
+    revalidatePath('/admin');
+  }
+
   // Fetch data
   let submissions: any[] = [];
   try {
@@ -67,6 +76,7 @@ export default async function AdminPage() {
                 <th style={{ padding: '12px', border: '1px solid #e5e7eb' }}>Phone</th>
                 <th style={{ padding: '12px', border: '1px solid #e5e7eb' }}>Interests</th>
                 <th style={{ padding: '12px', border: '1px solid #e5e7eb' }}>Notes</th>
+                <th style={{ padding: '12px', border: '1px solid #e5e7eb' }}>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -102,6 +112,14 @@ export default async function AdminPage() {
                   <td style={{ padding: '12px', border: '1px solid #e5e7eb' }}>{sub.phone}</td>
                   <td style={{ padding: '12px', border: '1px solid #e5e7eb' }}>{sub.interests}</td>
                   <td style={{ padding: '12px', border: '1px solid #e5e7eb' }}>{sub.notes}</td>
+                  <td style={{ padding: '12px', border: '1px solid #e5e7eb' }}>
+                    <form action={deleteSubmission}>
+                      <input type="hidden" name="id" value={sub.id} />
+                      <button type="submit" style={{ backgroundColor: '#FEE2E2', color: '#EF4444', border: 'none', padding: '6px 12px', borderRadius: '6px', cursor: 'pointer', fontSize: '12px', fontWeight: 600 }}>
+                        Delete
+                      </button>
+                    </form>
+                  </td>
                 </tr>
               ))}
             </tbody>
