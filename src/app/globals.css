@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-/* Sample comment */
 .badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;align-items:stretch}
 .badge{min-height:112px;border:1px solid #22406E;border-radius:18px;display:flex;align-items:center;justify-content:center;padding:18px 14px;text-align:center}
 .badge img{max-width:100%;max-height:64px;object-fit:contain;display:block}
