@@ -8,24 +8,6 @@ export default async function AdminPage() {
   // Fetch data
   let submissions: any[] = [];
   try {
-    // Ensure table exists
-    await sql`
-      CREATE TABLE IF NOT EXISTS contact_submissions (
-        id SERIAL PRIMARY KEY,
-        full_name VARCHAR(255) NOT NULL,
-        role VARCHAR(255),
-        organisation VARCHAR(255),
-        organisation_type VARCHAR(255),
-        clinical_system VARCHAR(255),
-        list_size VARCHAR(255),
-        email VARCHAR(255) NOT NULL,
-        phone VARCHAR(255),
-        interests TEXT,
-        notes TEXT,
-        source_page VARCHAR(50) DEFAULT 'demo',
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-      );
-    `;
     submissions = await sql`SELECT * FROM contact_submissions ORDER BY created_at DESC`;
   } catch (err) {
     console.error('Error fetching data (table might not exist yet):', err);
