@@ -215,42 +215,64 @@ input:focus{outline:2px solid #2F6BE0;outline-offset:1px}
 
 </div>
 <script>
-document.getElementById('theForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  
-  const form = e.target;
-  const inputs = form.querySelectorAll('input');
-  const data = { sourcePage: 'trust' };
-  
-  inputs.forEach(input => {
-    const label = input.previousSibling?.textContent?.trim() || input.closest('label')?.textContent?.trim() || '';
-    if (label.includes('Full name')) data.fullName = input.value;
-    if (label.includes('Organisation')) data.organisation = input.value;
-    if (label.includes('Work email')) data.email = input.value;
-  });
-
-  try {
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    if (res.ok) {
-      document.getElementById('formWrap').hidden = true;
-      document.getElementById('thanks').hidden = false;
-    } else {
-      alert('Failed to submit form. Please try again.');
+if (!window._ovoTrustInit) {
+  window._ovoTrustInit = true;
+  document.getElementById('theForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
     }
-  } catch (err) {
-    alert('An error occurred. Please try again.');
-  }
-});
-var a = document.getElementById('againBtn');
-if(a) a.addEventListener('click', function() {
-  document.getElementById('theForm').reset();
-  document.getElementById('formWrap').hidden = false;
-  document.getElementById('thanks').hidden = true;
-});
+
+    const inputs = form.querySelectorAll('input');
+    const data = { sourcePage: 'trust' };
+    
+    inputs.forEach(input => {
+      const label = input.previousSibling?.textContent?.trim() || input.closest('label')?.textContent?.trim() || '';
+      if (label.includes('Full name')) data.fullName = input.value;
+      if (label.includes('Organisation')) data.organisation = input.value;
+      if (label.includes('Work email')) data.email = input.value;
+    });
+  
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        document.getElementById('formWrap').hidden = true;
+        document.getElementById('thanks').hidden = false;
+      } else {
+        alert('Failed to submit form. Please try again.');
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = 'Request the assurance pack';
+        }
+      }
+    } catch (err) {
+      alert('An error occurred. Please try again.');
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = 'Request the assurance pack';
+      }
+    }
+  });
+  var a = document.getElementById('againBtn');
+  if(a) a.addEventListener('click', function() {
+    document.getElementById('theForm').reset();
+    document.getElementById('formWrap').hidden = false;
+    document.getElementById('thanks').hidden = true;
+    const btn = document.getElementById('theForm').querySelector('button[type="submit"]');
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = 'Request the assurance pack';
+    }
+  });
+}
 </script>
 <a id="toTop" href="#top" aria-label="Back to top" style="position: fixed; right: 28px; bottom: 28px; z-index: 60; width: 54px; height: 54px; border-radius: 50%; background: #2F6BE0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 30px rgba(8,27,60,0.35)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"></path></svg></a>
 <script>(function(){var t=document.getElementById("toTop");function u(){t.classList.toggle("show",window.scrollY>500)}window.addEventListener("scroll",u,{passive:true});u();t.addEventListener("click",function(e){e.preventDefault();window.scrollTo({top:0,behavior:"smooth"})});})();</script>
