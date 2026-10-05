@@ -6,7 +6,7 @@ export default async function AdminPage() {
   const sql = neon(process.env.DATABASE_URL!);
   
   // Fetch data
-  let submissions: any[] = [];
+  let submissions = [];
   try {
     submissions = await sql`SELECT * FROM contact_submissions ORDER BY created_at DESC`;
   } catch (err) {

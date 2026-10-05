@@ -64,7 +64,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2F6BE0;outline-offset
 <div class="dd"><a class="ddb" href="/resources">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
 <div class="ddm" style="width:320px"><a href="/resources"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M8 7h6M8 11h6"/></svg></span><span><b>FAQs</b><small>Answers to the questions practices ask most</small></span></a><a href="/resources#downloads"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span><span><b>Downloads</b><small>Brochures and the assurance pack</small></span></a><a href="/about"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><span><b>About OvoTech</b><small>Why we exist and where we're going</small></span></a></div></div>
 </nav>
-<div class="acts"><a class="login" href="#">Log in</a><a class="btn p" href="/demo">Book a demo</a></div>
+<div class="acts"><a class="btn p" href="/demo">Book a demo</a></div>
 </header>
 
 <section style="display: grid; grid-template-columns: 560px minmax(0, 1fr)">
@@ -80,7 +80,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2F6BE0;outline-offset
 <div style="display: flex; gap: 14px; font-size: 16px; line-height: 1.6; color: #CBD5E1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#55CBE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span>Your practice rules, review thresholds and audit trail.</span></div>
 <div style="display: flex; gap: 14px; font-size: 16px; line-height: 1.6; color: #CBD5E1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#55CBE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span>Governance answers for your IG lead, and next steps.</span></div>
 </div>
-<div style="position: relative; border-top: 1px solid #22406E; padding-top: 24px; margin-top: 12px; font-size: 15px; line-height: 1.7; color: #BFCBDA">Already an OvoTech customer? <a href="#" style="color: #9FE0F4; font-weight: 700">Contact support</a> or <a href="#" style="color: #9FE0F4; font-weight: 700">log in</a>.</div>
+<div style="position: relative; border-top: 1px solid #22406E; padding-top: 24px; margin-top: 12px; font-size: 15px; line-height: 1.7; color: #BFCBDA">Already an OvoTech customer? <a href="#" style="color: #9FE0F4; font-weight: 700">Contact support</a>.</div>
 </div>
 
 <div style="padding: 96px 80px; background: #F8FAFC">
