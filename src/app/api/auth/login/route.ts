@@ -4,10 +4,13 @@ export async function POST(request: Request) {
   try {
     const { username, password } = await request.json();
 
-    const expectedUser = process.env.ADMIN_USERNAME || 'admins@ovotech.co.uk';
-    const expectedPassword = process.env.ADMIN_PASSWORD || 'OvoTech@786123';
+    const expectedUser = (process.env.ADMIN_USERNAME || 'admins@ovotech.co.uk').replace(/['"]/g, '').trim();
+    const expectedPassword = (process.env.ADMIN_PASSWORD || 'OvoTech@786123').replace(/['"]/g, '').trim();
+    
+    const inputUser = username.trim();
+    const inputPassword = password.trim();
 
-    if (username === expectedUser && password === expectedPassword) {
+    if (inputUser === expectedUser && inputPassword === expectedPassword) {
       const response = NextResponse.json({ success: true });
       // Set a simple cookie for authorization
       response.cookies.set('admin_token', 'authorized', {
@@ -19,7 +22,7 @@ export async function POST(request: Request) {
       return response;
     }
 
-    return NextResponse.json({ error: 'Invalid username or password' }, { status: 401 });
+    return NextResponse.json({ error: 'Invalid credentials (v2)' }, { status: 401 });
   } catch (err) {
     return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
