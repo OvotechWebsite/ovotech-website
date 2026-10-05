@@ -1,28 +1,17 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(req: NextRequest) {
+export default function proxy(req: NextRequest) {
   if (req.nextUrl.pathname.startsWith('/admin')) {
-    const basicAuth = req.headers.get('authorization');
+    const token = req.cookies.get('admin_token')?.value;
 
-    if (basicAuth) {
-      const authValue = basicAuth.split(' ')[1];
-      const [user, pwd] = atob(authValue).split(':');
-
-      const expectedUser = process.env.ADMIN_USERNAME || 'admin';
-      const expectedPassword = process.env.ADMIN_PASSWORD || 'password123';
-
-      if (user === expectedUser && pwd === expectedPassword) {
-        return NextResponse.next();
-      }
+    if (token === 'authorized') {
+      return NextResponse.next();
     }
 
-    return new NextResponse('Auth Required', {
-      status: 401,
-      headers: {
-        'WWW-Authenticate': 'Basic realm="Secure Area"',
-      },
-    });
+    // Redirect to custom login page if not authorized
+    const loginUrl = new URL('/login', req.url);
+    return NextResponse.redirect(loginUrl);
   }
 
   return NextResponse.next();

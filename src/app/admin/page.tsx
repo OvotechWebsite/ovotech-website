@@ -14,15 +14,29 @@ export default async function AdminPage() {
   }
 
   return (
-    <div style={{ padding: '40px', fontFamily: 'system-ui, sans-serif' }}>
-      <h1 style={{ fontSize: '28px', marginBottom: '20px' }}>Admin Dashboard</h1>
-      <p style={{ marginBottom: '20px' }}>Contact Form Submissions</p>
-
-      {submissions.length === 0 ? (
-        <p>No submissions found or table not initialized.</p>
-      ) : (
-        <div style={{ overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+    <div style={{ backgroundColor: '#F8FAFC', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
+      <header style={{ backgroundColor: '#FFFFFF', padding: '20px 40px', borderBottom: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div>
+          <h1 style={{ fontSize: '24px', margin: 0, color: '#081B3C', fontWeight: 700 }}>Admin Dashboard</h1>
+          <p style={{ margin: '4px 0 0', color: '#56606E', fontSize: '14px' }}>Manage Contact Form Submissions</p>
+        </div>
+        <a 
+          href="/api/auth/logout"
+          style={{ display: 'inline-block', backgroundColor: '#EF4444', color: '#FFFFFF', textDecoration: 'none', padding: '10px 20px', borderRadius: '8px', cursor: 'pointer', fontWeight: 600 }}
+        >
+          Logout
+        </a>
+      </header>
+      
+      <main style={{ padding: '40px' }}>
+        {submissions.length === 0 ? (
+          <div style={{ backgroundColor: '#FFFFFF', padding: '40px', borderRadius: '16px', textAlign: 'center', color: '#56606E', border: '1px solid #E2E8F0' }}>
+            <p style={{ fontSize: '18px', fontWeight: 600 }}>No submissions yet.</p>
+            <p style={{ fontSize: '14px' }}>When users fill out the contact form, their data will appear here.</p>
+          </div>
+        ) : (
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '16px', border: '1px solid #E2E8F0', overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '14px' }}>
             <thead>
               <tr style={{ backgroundColor: '#f3f4f6', borderBottom: '2px solid #e5e7eb' }}>
                 <th style={{ padding: '12px', border: '1px solid #e5e7eb' }}>Date</th>
@@ -76,6 +90,7 @@ export default async function AdminPage() {
           </table>
         </div>
       )}
+      </main>
     </div>
   );
 }
