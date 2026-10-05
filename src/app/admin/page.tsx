@@ -1,4 +1,4 @@
-import { neon } from '@neondatabase/serverless';
+﻿import { neon } from '@neondatabase/serverless';
 import { revalidatePath } from 'next/cache';
 
 export const dynamic = 'force-dynamic';
@@ -44,8 +44,7 @@ export default async function AdminPage() {
     <div style={{ backgroundColor: '#F8FAFC', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
       <header style={{ backgroundColor: '#FFFFFF', padding: '20px 40px', borderBottom: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
-          <h1 style={{ fontSize: '24px', margin: 0, color: '#081B3C', fontWeight: 700 }}>Admin Dashboard</h1>
-          <p style={{ margin: '4px 0 0', color: '#56606E', fontSize: '14px' }}>Manage Contact Form Submissions</p>
+          <h1 style={{ fontSize: '24px', margin: 0, color: '#081B3C', fontWeight: 700 }}>Admin Dashboard</h1><div style={{ display: 'flex', gap: '20px', marginTop: '12px' }}><a href="/admin" style={{ textDecoration: 'none', color: '#2F6BE0', borderBottom: '2px solid #2F6BE0', paddingBottom: '4px', fontWeight: 600 }}>Form Submissions</a><a href="/admin/messages" style={{ textDecoration: 'none', color: '#56606E', fontWeight: 600 }}>Chat Messages</a></div>
         </div>
         <a 
           href="/api/auth/logout"
@@ -130,5 +129,6 @@ export default async function AdminPage() {
     </div>
   );
 }
+
 
 
