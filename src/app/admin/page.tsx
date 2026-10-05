@@ -3,7 +3,7 @@ import { neon } from '@neondatabase/serverless';
 export const dynamic = 'force-dynamic';
 
 export default async function AdminPage() {
-  const sql = neon(process.env.DATABASE_URL!);
+  const sql = neon(process.env.DATABASE_URL || process.env.POSTGRES_URL!);
   
   // Fetch data
   let submissions: any[] = [];

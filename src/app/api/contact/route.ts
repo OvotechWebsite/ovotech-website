@@ -6,7 +6,7 @@ export async function POST(request: Request) {
     const data = await request.json();
     
     // Connect to Neon DB
-    const sql = neon(process.env.DATABASE_URL!);
+    const sql = neon(process.env.DATABASE_URL || process.env.POSTGRES_URL!);
 
     // Ensure table exists (in production, you'd do this via a migration script, but this works for simplicity)
     await sql`
