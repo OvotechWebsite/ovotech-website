@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef } from 'react'
 
@@ -75,11 +75,37 @@ button{font-family:inherit;cursor:pointer}
 <nav class="subnav" aria-label="On this page"><div class="sn-in"><span class="sn-t">On this page</span><a href="#faqs">FAQs</a></div></nav>
 
 
+
+
+<section id="faqs" style="padding: 64px 80px 128px; display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 72px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #2458C7">FAQs</div>
+<h2 style="margin: 0; font-family: Newsreader, Georgia, serif; font-weight: 400; font-size: 48px; line-height: 1.08; color: #081B3C">Questions we hear most.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.7; color: #3D4655">Can't see yours? Our team will answer it on a call.</p>
+<a href="/demo" style="font-size: 16px; font-weight: 700; color: #2458C7; padding: 6px 0">Ask a question</a>
+</div>
+<div id="faq" style="display: flex; flex-direction: column; border-top: 1px solid #E2E8F0">
+
+</div>
+</section>
+
+<section style="margin: 0 80px 128px; background: #EFF6FF; border-radius: 32px; padding: 72px 80px; display: flex; justify-content: space-between; align-items: center; gap: 48px">
+<h2 style="margin: 0; font-family: Newsreader, Georgia, serif; font-weight: 400; font-size: 44px; line-height: 1.12; color: #081B3C; max-width: 720px">Prefer to see it? We'll walk you through OvoTech in 30 minutes.</h2>
+<a class="btn-p" href="/demo" style="flex-shrink: 0; font-size: 16px; font-weight: 600; color: #FFFFFF; background: #2F6BE0; padding: 17px 28px; border-radius: 999px">Request a demo</a>
+</section>
+
+<footer style="flex-grow: 1; background: #061430; color: #B4C1D1; padding: 80px 80px 44px; display: flex; flex-direction: column; justify-content: space-between; gap: 56px">
+<div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: 56px">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<a href="/" aria-label="OvoTech home" style="display: flex; align-items: center; gap: 12px; color: #FFFFFF"><img src="/images/logo.svg" alt="OvoTech" style="height: 30px; width: auto; display: block"></a>
+<p style="margin: 0; font-size: 15px; line-height: 1.7; max-width: 320px">The AI operating layer for primary care. More time for care, less time on admin.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px"><div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF">Product</div><a href="/medical-coding" style="color: #B4C1D1">Medical Coding</a><a href="/platform" style="color: #B4C1D1">Platform</a><a href="/integrations" style="color: #B4C1D1">Integrations</a><a href="/trust" style="color: #B4C1D1">Trust &amp; Governance</a></div>
 <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px"><div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF">Company</div><a href="/about" style="color: #B4C1D1">About</a><a href="/resources" style="color: #B4C1D1">Resources &amp; FAQs</a><a href="/demo" style="color: #B4C1D1">Request a demo</a></div>
 <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.6"><div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF">Contact</div><span>223-225 Stockport Road<br>Ashton-Under-Lyne, OL7 0NT</span><a href="mailto:support@ovotech.co.uk" style="color: #9FE0F4">support@ovotech.co.uk</a></div>
 </div>
 <div style="border-top: 1px solid #173059; padding-top: 28px; display: flex; justify-content: space-between; font-size: 14px">
-<span>© 2026 OvoTech. An iTANZ Group product.</span>
+<span>Â© 2026 OvoTech. An iTANZ Group product.</span>
 <div style="display: flex; gap: 28px"></div>
 </div>
 </footer>
@@ -94,7 +120,7 @@ var Q=[
       ['How does human review work?', 'Reviewers see the document, the highlighted source text and the suggested code side by side, then accept, amend or reject. GPs can override at any point, and nothing is filed without explicit approval.'],
       ['Which systems does OvoTech integrate with?', 'EMIS and SystmOne through NHS IM1, Docman for incoming correspondence, and HL7 FHIR for standards-based exchange across the NHS. The Integrations page has the full list.'],
       ['Where is patient data stored?', 'In the UK. Data is encrypted in transit and at rest, handled as special-category data under UK GDPR, and covered by a data processing agreement and DPIA for every practice.'],
-      ['What happens when the AI isn’t sure?', 'Borderline suggestions are flagged for careful review. Where confidence is low, OvoTech makes no suggestion at all and the item goes to manual coding.'],
+      ['What happens when the AI isnâ€™t sure?', 'Borderline suggestions are flagged for careful review. Where confidence is low, OvoTech makes no suggestion at all and the item goes to manual coding.'],
       ['Is every action audited?', 'Yes. Every suggestion, decision and rule change is written to an immutable, tamper-evident audit trail.'],
       ['Can we configure OvoTech to our practice?', 'Yes. Document types, reviewers, thresholds, coding lists, routing and escalation are all set per practice, and practice managers change rules in the browser.'],
       ['What does OvoTech cover beyond coding?', 'Eight modules on one engine: Medical Coding, Blood Test and Pathology, Referral Management, Repeat Prescriptions, QOF Optimisation, Discharge Summary, Clinical Intelligence and Analytics, and Population Health Intelligence.']
@@ -112,8 +138,6 @@ draw();
 <script src="/assets/ovo-chat.js"></script>
 <script src="/assets/v5.js"></script>
 `
-
-
 
 
 
