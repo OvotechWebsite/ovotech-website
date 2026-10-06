@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'OvoTech trust and governance',
@@ -16,5 +16,6 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return children
 }
+
 
 
