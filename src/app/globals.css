@@ -749,3 +749,33 @@ section svg.thread{max-width:100%}
 .rot .w.rw-out{opacity:0;transform:translateY(8px)}
 
 
+
+/* Scoped styles for the review editor, resources and privacy page. */
+.skip-link{position:fixed;left:16px;top:12px;z-index:1000;background:#fff;color:#17212F;padding:12px 18px;border:2px solid #377DFF;border-radius:8px;transform:translateY(-180%)}
+.skip-link:focus{transform:none}
+:focus-visible{outline:3px solid #377DFF;outline-offset:4px}
+.privacy-link{color:#B4C1D1;text-decoration:underline;align-self:flex-start}
+.review-card{border:1px solid #E2E6EB;background:#fff;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.review-card h3{font:700 17px 'Plus Jakarta Sans',sans-serif;margin:0;color:#17212F}
+.review-card p{font-size:14px;line-height:1.6;margin:0;overflow-wrap:anywhere;color:#30343B}
+.review-actions{display:flex;flex-wrap:wrap;gap:8px}
+.review-card button{font:600 14px 'Plus Jakarta Sans',sans-serif;background:#EFF6FF;color:#2458C7;border:1px solid #D3E0F2;border-radius:10px;padding:10px 16px;cursor:pointer}
+.review-card button[type=submit]{background:#2F6BE0;color:white}
+.amend-form{display:flex;flex-direction:column;gap:14px}
+.amend-form label{display:flex;flex-direction:column;gap:7px;font-size:14px;font-weight:600}
+.amend-form input{width:100%;box-sizing:border-box;padding:12px;border:1px solid #CBD5E1;border-radius:8px;font:inherit}
+.review-card .review-note{font-size:12px;color:#6B7280}
+.review-status{font-weight:700}
+.privacy-page{background:#F8FAFC;min-height:100vh;color:#30343B;font-family:'Plus Jakarta Sans',sans-serif}
+.privacy-page header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px max(24px,calc((100vw - 1100px)/2));background:white;border-bottom:1px solid #E2E6EB}
+.privacy-page main{max-width:800px;margin:auto;padding:48px 24px 80px;line-height:1.8}
+.privacy-page h1{font-size:clamp(32px,5vw,52px);line-height:1.15;color:#17212F}
+.privacy-page h2{font-size:23px;margin-top:36px;color:#17212F}
+.privacy-page a{color:#2458C7;text-decoration:underline}
+.privacy-draft{padding:18px;background:#FEF3C7;border:1px solid #F59E0B;border-radius:12px;font-size:14px}
+.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:1160px;margin:0 auto;padding:64px 24px}
+.resource-card{border:1px solid #E2E6EB;border-radius:22px;padding:32px;background:#fff;color:#30343B;line-height:1.7}
+.resource-card h2{font-size:26px;line-height:1.25;color:#17212F;margin:0 0 16px}
+.resource-card a{color:#2458C7;text-decoration:underline;display:inline-block;margin:12px 16px 0 0}
+@media(max-width:700px){.resource-grid{grid-template-columns:1fr}.privacy-page header img{width:140px}}
+
