@@ -268,14 +268,27 @@ mark{background:#DCEBFF;color:#0F3570;padding:1px 4px;border-radius:4px}
 <label><span class="v">Target turnaround with OvoTech (hours)<output id="o6">24</output></span><input id="r6" type="range" min="1" max="72" step="1" value="24"></label>
 </div>
 <div class="res">
-<div style="font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#55CBE8">Time back every month</div>
+<div id="lb_main" style="font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#55CBE8">Time back every month</div>
 <div class="big"><span id="hb">0</span> <small>hours</small></div>
-<div class="kv"><div><b id="ht">0</b><span>hours a month coding today</span></div><div><b id="hw">0</b><span>hours a month reviewing with OvoTech</span></div><div><b id="vb">Â£0</b><span>staff time released a month</span></div><div><b id="fte">0</b><span>days a month back for the team</span></div><div><b id="ta">0h</b><span>faster turnaround per letter</span></div><div><b id="tp">0%</b><span>of coding time released</span></div></div>
-<div class="note">Hours released = letters a day Ã— (minutes today âˆ’ minutes with OvoTech) Ã— 21 working days Ã· 60. Value = hours released Ã— hourly cost. Turnaround = today's average âˆ’ your target. Based on 7.5-hour days. This is an estimate from your own inputs, not a guarantee; we'll firm it up with you on your own correspondence.</div>
+<div class="kv"><div><b id="ht">0</b><span>hours a month coding today</span></div><div><b id="hw">0</b><span>hours a month reviewing with OvoTech</span></div><div><b id="vb">Â£0</b><span id="lb_vb">staff time released a month</span></div><div><b id="fte">0</b><span id="lb_fte">days a month back for the team</span></div><div><b id="ta">0h</b><span id="lb_ta">faster turnaround per letter</span></div><div><b id="tp">0%</b><span id="lb_tp">of coding time released</span></div></div>
+<div class="note"><strong>* All results are estimates.</strong> Hours released = letters a day Ã— (minutes today âˆ’ minutes with OvoTech) Ã— 21 working days Ã· 60. Value = hours released Ã— hourly cost. Turnaround = today's average âˆ’ your target. Based on 7.5-hour days. This is an estimate from your own inputs, not a guarantee; we'll firm it up with you on your own correspondence.</div>
 <a class="btn p" href="/demo" style="align-self:flex-start">Validate this on your letters <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div></div></div></section>
 <script>(function(){var g=function(i){return document.getElementById(i)};function c(){var a=+g('r1').value,b=+g('r2').value,d=+g('r3').value,r=+g('r4').value;g('o1').value=a;g('o2').value=b;g('o3').value=d;g('o4').value=r;
-var t=a*b*21/60,w=a*d*21/60,h=(t-w),t5=+g('r5').value,t6=+g('r6').value;g('o5').value=t5;g('o6').value=t6;g('ta').textContent=(t5-t6)+'h';g('tp').textContent=(t>0?Math.round(h/t*100):0)+'%';g('ht').textContent=Math.round(t);g('hw').textContent=Math.round(w);g('hb').textContent=Math.round(h);g('vb').textContent='Â£'+Math.round(h*r).toLocaleString('en-GB');g('fte').textContent=(h/7.5).toFixed(1);}
+var t=a*b*21/60,w=a*d*21/60,h=(t-w),t5=+g('r5').value,t6=+g('r6').value,ta=(t5-t6);g('o5').value=t5;g('o6').value=t6;
+g('lb_main').textContent=h>0?'Time back every month':h<0?'Extra time every month':'No change in time';
+g('lb_main').style.color=h<0?'#E85555':'#55CBE8';
+g('ta').textContent=Math.abs(ta)+'h';
+g('lb_ta').textContent=ta>=0?'faster turnaround per letter':'slower turnaround per letter';
+g('tp').textContent=(t>0?Math.round(Math.abs(h)/t*100):0)+'%';
+g('lb_tp').textContent=h>=0?'of coding time released':'of coding time added';
+g('ht').textContent=Math.round(t);
+g('hw').textContent=Math.round(w);
+g('hb').textContent=Math.round(Math.abs(h));
+g('vb').textContent=(h<0?'-Â£':'Â£')+Math.round(Math.abs(h)*r).toLocaleString('en-GB');
+g('lb_vb').textContent=h>=0?'staff time released a month':'additional staff time cost a month';
+g('fte').textContent=(Math.abs(h)/7.5).toFixed(1);
+g('lb_fte').textContent=h>=0?'days a month back for the team':'extra days a month for the team';}
 ['r1','r2','r3','r4','r5','r6'].forEach(function(i){g(i).addEventListener('input',c)});c();})();</script>
 <section id="changes" style="padding: 128px 80px; display: flex; flex-direction: column; gap: 52px">
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 88px; align-items: end">
