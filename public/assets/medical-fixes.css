@@ -1,0 +1,15 @@
+
+.admin-preview .kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
+.admin-preview .kpis b{font-size:25px}
+.admin-preview .kpis small{line-height:1.4}
+.admin-trends{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.admin-trend{border:1px solid #E2E8F0;border-radius:12px;padding:12px;min-width:0}
+.admin-trend>b{font-size:12px;color:#081B3C;display:block;margin-bottom:10px}
+.admin-trend svg{display:block;width:100%;height:44px}
+.admin-trend p,.admin-estimate-note{font-size:11px;line-height:1.6;margin:6px 0 0;color:#56606E}
+.admin-distribution{display:flex;align-items:center;gap:8px;min-width:0}
+.admin-distribution i{height:6px;min-width:30px;border-radius:4px;background:#2F6BE0;display:block}
+@media (max-width:800px) {
+  .admin-preview .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .admin-trends{grid-template-columns:1fr}
+}
