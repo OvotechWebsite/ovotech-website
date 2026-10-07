@@ -142,7 +142,7 @@ a{color:#2458C7;text-decoration:none}a:hover{color:#1B4596}
 <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.6"><div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF">Contact</div><span>223-225 Stockport Road<br>Ashton-Under-Lyne, OL7 0NT</span><a href="mailto:support@ovotech.co.uk" style="color: #9FE0F4">support@ovotech.co.uk</a></div>
 </div>
 <div style="border-top: 1px solid #173059; padding-top: 28px; display: flex; justify-content: space-between; font-size: 14px">
-<span>Â© 2026 OvoTech. An iTANZ Group product.</span>
+<span>© 2026 OvoTech. An iTANZ Group product.</span>
 <div style="display: flex; gap: 28px"></div>
 </div>
 </footer>

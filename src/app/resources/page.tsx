@@ -105,7 +105,7 @@ button{font-family:inherit;cursor:pointer}
 <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.6"><div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF">Contact</div><span>223-225 Stockport Road<br>Ashton-Under-Lyne, OL7 0NT</span><a href="mailto:support@ovotech.co.uk" style="color: #9FE0F4">support@ovotech.co.uk</a></div>
 </div>
 <div style="border-top: 1px solid #173059; padding-top: 28px; display: flex; justify-content: space-between; font-size: 14px">
-<span>Â© 2026 OvoTech. An iTANZ Group product.</span>
+<span>© 2026 OvoTech. An iTANZ Group product.</span>
 <div style="display: flex; gap: 28px"></div>
 </div>
 </footer>
@@ -120,7 +120,7 @@ var Q=[
       ['How does human review work?', 'Reviewers see the document, the highlighted source text and the suggested code side by side, then accept, amend or reject. GPs can override at any point, and nothing is filed without explicit approval.'],
       ['Which systems does OvoTech integrate with?', 'EMIS and SystmOne through NHS IM1, Docman for incoming correspondence, and HL7 FHIR for standards-based exchange across the NHS. The Integrations page has the full list.'],
       ['Where is patient data stored?', 'In the UK. Data is encrypted in transit and at rest, handled as special-category data under UK GDPR, and covered by a data processing agreement and DPIA for every practice.'],
-      ['What happens when the AI isnâ€™t sure?', 'Borderline suggestions are flagged for careful review. Where confidence is low, OvoTech makes no suggestion at all and the item goes to manual coding.'],
+      ['What happens when the AI isn’t sure?', 'Borderline suggestions are flagged for careful review. Where confidence is low, OvoTech makes no suggestion at all and the item goes to manual coding.'],
       ['Is every action audited?', 'Yes. Every suggestion, decision and rule change is written to an immutable, tamper-evident audit trail.'],
       ['Can we configure OvoTech to our practice?', 'Yes. Document types, reviewers, thresholds, coding lists, routing and escalation are all set per practice, and practice managers change rules in the browser.'],
       ['What does OvoTech cover beyond coding?', 'Eight modules on one engine: Medical Coding, Blood Test and Pathology, Referral Management, Repeat Prescriptions, QOF Optimisation, Discharge Summary, Clinical Intelligence and Analytics, and Population Health Intelligence.']
