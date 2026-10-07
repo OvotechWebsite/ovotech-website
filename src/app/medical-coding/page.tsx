@@ -136,7 +136,9 @@ mark{background:#DCEBFF;color:#0F3570;padding:1px 4px;border-radius:4px}
 <p style="margin: 0; font-size: 18px; line-height: 1.7; color: #3D4655">Select a step to see what OvoTech does at each stage, from the moment a letter lands to the moment it is filed.</p>
 </div>
 <div style="display: grid; grid-template-columns: 420px minmax(0, 1fr); gap: 32px">
+<div class="workflow-navigation">
 <div id="stepList" style="display: flex; flex-direction: column; gap: 10px">
+</div>
 </div>
 <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 26px; padding: 52px 56px; display: flex; flex-direction: column; gap: 22px">
 <div style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #2458C7">Step <span id="stepN">01</span></div>
