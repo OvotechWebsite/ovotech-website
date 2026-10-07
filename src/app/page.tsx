@@ -34,7 +34,7 @@ export default function Page() {
 }
 
 const htmlContent = `<style>html{scroll-behavior:smooth}[id]{scroll-margin-top:96px}#toTop{opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}#toTop.show{opacity:1;pointer-events:auto}#toTop:hover{transform:translateY(-3px);color:#fff}</style>
-<div class="annc"><span class="tgl"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Secure by design. Built to NHS standards.</span><span class="mid"><span class="pill">New</span><span>OvoTech Medical Coding for primary care teams.</span><a href="/medical-coding">See how it works &rarr;</a></span><span class="rt"><a href="/demo">Contact us</a></span></div>
+
 <header id="top" class="hdr">
 <a class="logo" href="/" aria-label="OvoTech home"><img src="/images/logo.svg" alt="OvoTech"></a>
 <nav class="mainnav" aria-label="Main">
