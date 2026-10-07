@@ -1,4 +1,4 @@
-﻿(function(){ if(window._ovoChatLoaded) return; window._ovoChatLoaded = true; 
+(function(){ if(window._ovoChatLoaded) return; window._ovoChatLoaded = true; 
 var FAQ=[
 ['How do I get started with OvoTech?','Request a demo and we will walk you through Medical Coding on the kind of correspondence your team handles. From there we connect OvoTech to your clinical system through NHS IM1 and configure your rules with you in a guided onboarding.'],
 ['What is OvoTech?','OvoTech is the AI operating layer for UK primary care. It takes on the operational and administrative work around care, starting with Medical Coding, across the clinical systems your practice already uses.'],
@@ -8,7 +8,7 @@ var FAQ=[
 ['What does OvoTech Medical Coding do?','It reads incoming clinical correspondence, extracts the clinical content, suggests SNOMED CT UK codes with the supporting text and a confidence score, and adds approved codes to the patient record.'],
 ['Which coding terminology does it use?','SNOMED CT UK, the national clinical terminology. Every suggestion is validated against the official UK release.'],
 ['How does human review work?','Reviewers see the document, the highlighted source text and the suggested code side by side, then accept, amend or reject. GPs can override at any point, and nothing is filed without explicit approval.'],
-['Which systems does OvoTech integrate with?','clinical systems through NHS IM1, Docman for incoming correspondence, and HL7 FHIR for standards-based exchange across the NHS.'],
+['Which systems does OvoTech integrate with?','OvoTech connects to clinical systems through NHS IM1, uses Docman for incoming correspondence, and supports HL7 FHIR for standards-based exchange.'],
 ['Where is patient data stored?','In the UK. Data is encrypted in transit and at rest, handled as special-category data under UK GDPR, and covered by a data processing agreement and DPIA for every practice.'],
 ['Is every action audited?','Yes. Every suggestion, decision and rule change is written to an immutable, tamper-evident audit trail.'],
 ['Can we configure OvoTech to our practice?','Yes. Document types, reviewers, thresholds, coding lists, routing and escalation are all set per practice, and practice managers change rules in the browser.'],

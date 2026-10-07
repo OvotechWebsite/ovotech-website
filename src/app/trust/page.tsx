@@ -127,9 +127,9 @@ input:focus{outline:2px solid #2F6BE0;outline-offset:1px}
 <div style="font-size: 16px; line-height: 1.65; color: #3D4655">ISO 27001 and Cyber Essentials certified. Request the certificates to review their scope and validity dates.</div>
 </div>
 <div style="border: 1px solid #E2E8F0; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 12px">
-<div style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #2458C7">Interoperability</span><span style="font-size: 12px; font-weight: 700; color: #2458C7; background: #EAF2FF; padding: 5px 10px; border-radius: 999px">In Progress</span></div>
-<div style="font-size: 24px; font-weight: 700; color: #081B3C">NHS IM1, FHIR and HL7</div>
-<div style="font-size: 16px; line-height: 1.65; color: #3D4655">Building IM1 access for direct, bi-directional integration with clinical systems, and standards-based exchange across the NHS.</div>
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #2458C7">Interoperability</span><span style="font-size: 12px; font-weight: 700; color: #2458C7; background: #EAF2FF; padding: 5px 10px; border-radius: 999px">Integration complete</span></div>
+<div style="font-size: 24px; font-weight: 700; color: #081B3C">NHS IM1</div>
+<div style="font-size: 16px; line-height: 1.65; color: #3D4655">OvoTech connects directly to your clinical system through NHS IM1, without relying on screen layouts.</div>
 </div>
 </div>
 </section>

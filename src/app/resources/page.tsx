@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef } from 'react'
 
@@ -120,7 +120,7 @@ var Q=[
       ['What does OvoTech Medical Coding do?', 'It reads incoming clinical correspondence, extracts the clinical content, suggests SNOMED CT UK codes with the supporting text and a confidence score, and adds approved codes to the patient record.'],
       ['Which coding terminology does it use?', 'SNOMED CT UK, the national clinical terminology. Every suggestion is validated against the official UK release.'],
       ['How does human review work?', 'Reviewers see the document, the highlighted source text and the suggested code side by side, then accept, amend or reject. GPs can override at any point, and nothing is filed without explicit approval.'],
-      ['Which systems does OvoTech integrate with?', 'Supported clinical-system connections, with deployment readiness confirmed by our team, Docman for incoming correspondence, and HL7 FHIR for standards-based exchange across the NHS. The Integrations page has the full list.'],
+      ['Which systems does OvoTech integrate with?', 'OvoTech connects to clinical systems through NHS IM1, uses Docman for incoming correspondence, and supports HL7 FHIR for standards-based exchange. The Integrations page has the full list.'],
       ['Where is patient data stored?', 'In the UK. Data is encrypted in transit and at rest, handled as special-category data under UK GDPR, and covered by a data processing agreement and DPIA for every practice.'],
       ['What happens when the AI isn’t sure?', 'Borderline suggestions are flagged for careful review. Where confidence is low, OvoTech makes no suggestion at all and the item goes to manual coding.'],
       ['Is every action audited?', 'Yes. Every suggestion, decision and rule change is written to an immutable, tamper-evident audit trail.'],
