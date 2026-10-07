@@ -25,7 +25,7 @@ export default async function AdminMessages({ searchParams }: { searchParams: { 
   const selectedChat = selectedEmail ? chats[selectedEmail] : [];
 
   return (
-    <div style={{ backgroundColor: '#F8FAFC', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
+    <div style={{ backgroundColor: '#FFFFFF', minHeight: '100vh', /* inherited */ }}>
       <header style={{ backgroundColor: '#FFFFFF', padding: '20px 40px', borderBottom: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
           <h1 style={{ fontSize: '24px', margin: 0, color: '#081B3C', fontWeight: 700 }}>Admin Dashboard</h1>
@@ -71,7 +71,7 @@ export default async function AdminMessages({ searchParams }: { searchParams: { 
         <div style={{ flex: 1, backgroundColor: '#FFFFFF', borderRadius: '16px', border: '1px solid #E2E8F0', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
           {selectedEmail ? (
             <>
-              <div style={{ padding: '20px', borderBottom: '1px solid #E2E8F0', backgroundColor: '#F8FAFC' }}>
+              <div style={{ padding: '20px', borderBottom: '1px solid #E2E8F0', backgroundColor: '#FFFFFF' }}>
                 <div style={{ fontWeight: 700, fontSize: '18px', color: '#081B3C' }}>{selectedChat[0]?.full_name}</div>
                 <div style={{ fontSize: '14px', color: '#64748B' }}>{selectedEmail} {selectedChat[0]?.organisation ? `• ${selectedChat[0].organisation}` : ''}</div>
               </div>
@@ -87,7 +87,7 @@ export default async function AdminMessages({ searchParams }: { searchParams: { 
                   </div>
                 ))}
               </div>
-              <div style={{ padding: '20px', borderTop: '1px solid #E2E8F0', backgroundColor: '#F8FAFC', color: '#64748B', fontSize: '14px', textAlign: 'center' }}>
+              <div style={{ padding: '20px', borderTop: '1px solid #E2E8F0', backgroundColor: '#FFFFFF', color: '#64748B', fontSize: '14px', textAlign: 'center' }}>
                 Replies to users should be sent via your email client to {selectedEmail}
               </div>
             </>
