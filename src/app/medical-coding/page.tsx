@@ -457,7 +457,7 @@ function drawCodes(){
  document.getElementById('notAll').hidden=all;document.getElementById('canFile').hidden=!(all&&!filed);document.getElementById('filed').hidden=!filed;
  document.getElementById('filedText').textContent=v.filter(function(x){return x==='a'||x==='e';}).length+' written to the record, '+v.filter(function(x){return x==='r';}).length+' rejected. Audit entry created.';
 }
-document.getElementById('codes').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;if(b.dataset.v==='e'){var cur=C.find(function(x){return x.id===b.dataset.id});var n=prompt('Edit the suggested term:',cur.term);if(n!==null){cur.term=n;st[b.dataset.id]='e'}else{return}}else{st[b.dataset.id]=b.dataset.v}filed=false;drawCodes();});
+document.getElementById('codes').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;if(b.dataset.v==='e'){var cur=C.find(function(x){return x.id===b.dataset.id});var n=prompt('Edit the suggested term:',cur.term);if(n===null)return;var c=prompt('Edit the SNOMED CT UK code:',cur.code);if(c===null)return;cur.term=n;cur.code=c;st[b.dataset.id]='e'}else{st[b.dataset.id]=b.dataset.v}filed=false;drawCodes();});
 document.getElementById('fileBtn').addEventListener('click',function(){filed=true;drawCodes();});
 document.getElementById('resetBtn').addEventListener('click',function(){clear();drawCodes();});
 drawSteps();drawCodes();
