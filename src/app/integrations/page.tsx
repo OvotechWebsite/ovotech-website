@@ -108,13 +108,13 @@ a{color:#2458C7;text-decoration:none}a:hover{color:#1B4596}
 <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
 <div style="border: 1px solid #E2E8F0; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
 <span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1E4FB0; background: #EAF2FF; padding: 5px 10px; border-radius: 999px">Clinical record</span>
-<div style="font-size: 24px; font-weight: 700; color: #081B3C">Clinical system</div>
+<div style="font-size: 24px; font-weight: 700; color: #081B3C">EMIS</div>
 <div style="font-size: 16px; line-height: 1.65; color: #3D4655">Bi-directional integration through NHS IM1. Documents and patient context come in; approved codes and actions are added to the patient record.</div>
 </div>
 <div style="border: 1px solid #E2E8F0; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
 <span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1E4FB0; background: #EAF2FF; padding: 5px 10px; border-radius: 999px">Clinical record</span>
-<div style="font-size: 24px; font-weight: 700; color: #081B3C">Clinical system</div>
-<div style="font-size: 16px; line-height: 1.65; color: #3D4655">Confirm the supported information flows, approval rules and patient record updates for your practice.</div>
+<div style="font-size: 24px; font-weight: 700; color: #081B3C">SystmOne</div>
+<div style="font-size: 16px; line-height: 1.65; color: #3D4655">Connect your correspondence workflow to SystmOne, with approval rules and patient record updates configured for your practice.</div>
 </div>
 <div style="border: 1px solid #E2E8F0; border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
 <span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1E4FB0; background: #EAF2FF; padding: 5px 10px; border-radius: 999px">Documents</span>
