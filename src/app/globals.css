@@ -779,3 +779,6 @@ section svg.thread{max-width:100%}
 .resource-card a{color:#2458C7;text-decoration:underline;display:inline-block;margin:12px 16px 0 0}
 @media(max-width:700px){.resource-grid{grid-template-columns:1fr}.privacy-page header img{width:140px}}
 
+.footer-social-link{color:#B4C1D1;display:inline-flex;align-items:center;justify-content:center;transition:color .2s ease,transform .2s ease;text-decoration:none}
+.footer-social-link:hover{color:#FFFFFF !important;transform:translateY(-2px)}
+
