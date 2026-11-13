@@ -194,10 +194,10 @@ export async function POST(request: Request) {
           process.env.RECEIVING_EMAIL ||
           'marketing.ovotech@ovotech.co.uk';
 
-        // Sender address: defaults to verified domain address noreply@ovotech.co.uk, or configurable via RESEND_FROM_EMAIL
+        // Sender address: defaults to verified domain address noreply@notify.ovotech.co.uk, or configurable via RESEND_FROM_EMAIL
         const fromEmail =
           process.env.RESEND_FROM_EMAIL ||
-          'OvoTech <noreply@ovotech.co.uk>';
+          'OvoTech <noreply@notify.ovotech.co.uk>';
 
         const { subject, html, text } = formatSubmissionEmail(data);
 
